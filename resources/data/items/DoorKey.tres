@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://d0ttj0u1sa83g"]
+
+[ext_resource type="Texture2D" uid="uid://dwlsfkebvgb65" path="res://assets/spritesheets/items/keys_1_1.png" id="1_aaabn"]
+[ext_resource type="Script" uid="uid://cwm8da7qp41ut" path="res://scripts/resources/Item.cs" id="1_squ7c"]
+
+[resource]
+script = ExtResource("1_squ7c")
+itemName = "Door Key"
+icon = ExtResource("1_aaabn")
+maxStack = 1
+metadata/_custom_type_script = "uid://cwm8da7qp41ut"

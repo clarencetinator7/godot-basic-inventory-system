@@ -1,0 +1,73 @@
+[gd_scene load_steps=9 format=3 uid="uid://bw5f1smjmoa7s"]
+
+[ext_resource type="Script" uid="uid://c4v0w6gfl7g12" path="res://scripts/actors/player/Player.cs" id="1_l17oj"]
+[ext_resource type="Texture2D" uid="uid://bblcgstuxv1vu" path="res://assets/spritesheets/player/Soldier.png" id="1_wmv1v"]
+[ext_resource type="Script" uid="uid://3keiomb11i1s" path="res://scripts/actors/player/PlayerInventory.cs" id="3_oj104"]
+[ext_resource type="Resource" uid="uid://drhimyqxmc2ja" path="res://resources/data/player/PlayerInventory.tres" id="4_mpktj"]
+
+[sub_resource type="Animation" id="Animation_wmv1v"]
+resource_name = "idle_left"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0980716, 0.201047, 0.300344, 0.399642, 0.500165),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
+
+[sub_resource type="Animation" id="Animation_l17oj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_oj104"]
+_data = {
+&"RESET": SubResource("Animation_l17oj"),
+&"idle_left": SubResource("Animation_wmv1v")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wmv1v"]
+size = Vector2(22, 23.5)
+
+[node name="Player" type="CharacterBody2D"]
+motion_mode = 1
+script = ExtResource("1_l17oj")
+
+[node name="Inventory" type="Node" parent="."]
+script = ExtResource("3_oj104")
+inventory = ExtResource("4_mpktj")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+show_behind_parent = true
+texture_filter = 1
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("1_wmv1v")
+hframes = 9
+vframes = 7
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_oj104")
+}
+autoplay = "idle_left"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 5.75)
+shape = SubResource("RectangleShape2D_wmv1v")

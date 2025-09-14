@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://bj85w6bng3c83"]
+
+[ext_resource type="Texture2D" uid="uid://dw0tn2n5bsewy" path="res://assets/spritesheets/items/flasks_1_1.png" id="1_6cmk2"]
+[ext_resource type="Script" uid="uid://cwm8da7qp41ut" path="res://scripts/resources/Item.cs" id="2_guu33"]
+
+[resource]
+script = ExtResource("2_guu33")
+itemName = "Health Potion"
+icon = ExtResource("1_6cmk2")
+maxStack = 1
+metadata/_custom_type_script = "uid://cwm8da7qp41ut"

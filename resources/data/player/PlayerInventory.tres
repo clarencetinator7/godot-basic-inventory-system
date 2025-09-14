@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemInventory" load_steps=4 format=3 uid="uid://drhimyqxmc2ja"]
+
+[ext_resource type="Resource" uid="uid://d0ttj0u1sa83g" path="res://resources/data/items/DoorKey.tres" id="1_40f8e"]
+[ext_resource type="Script" uid="uid://cjwbunbo8vh4r" path="res://scripts/resources/ItemInventory.cs" id="1_n5b5b"]
+[ext_resource type="Resource" uid="uid://bj85w6bng3c83" path="res://resources/data/items/HealthPotion.tres" id="2_dusp1"]
+
+[resource]
+script = ExtResource("1_n5b5b")
+items = [ExtResource("1_40f8e"), null, null, null, ExtResource("2_dusp1"), null, null, null, null, null, null, null, null, null, null]
+metadata/_custom_type_script = "uid://cjwbunbo8vh4r"

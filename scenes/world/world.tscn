@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://c7jhso6wc6usw"]
+
+[ext_resource type="PackedScene" uid="uid://bw5f1smjmoa7s" path="res://scenes/actors/player/player.tscn" id="1_dphjl"]
+[ext_resource type="PackedScene" uid="uid://b7grv84ofwa4s" path="res://scenes/ui/ui_inventory.tscn" id="2_sl2e5"]
+
+[node name="World" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Inventory" parent="CanvasLayer" instance=ExtResource("2_sl2e5")]
+visible = false
+anchors_preset = -1
+offset_left = 576.0
+offset_top = 324.0
+offset_right = -576.0
+offset_bottom = -324.0
+
+[node name="Player" parent="." instance=ExtResource("1_dphjl")]
+position = Vector2(262, 181)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+zoom = Vector2(2, 2)
