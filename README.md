@@ -1,6 +1,4 @@
-# Godot Inventory System Prototype
-
-![Inventory System High-Level Diagram](documentation/inventory-high-level-diagram.png)
+# Godot Basic Inventory System
 
 ## Overview
 
